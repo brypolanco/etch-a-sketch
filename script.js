@@ -1,19 +1,14 @@
 function makeGrid(row, column){
     const containter = document.querySelector('#container');
-    const div = document.createElement('div');
-    div.className='row';
 
-    let divList = document.querySelectorAll('.row');
-
-    //Create div for each row
-    for(let i = 0; i<=row; i++){
-        divList[i]=document.createElement('div')
-        //divList[i].className='row';
-    }
-
-    //Append div of each row
-    for (let i;i<divList.length;i++){
-        containter.appendChild(divList[i]);
+    let i = 0;
+    for(i = 0; i<=row; i++){
+        let divRow=document.createElement('div')
+        divRow.className='row';
+        for(let i = 0; i<column; i++){
+            let cell = document.createElement('div');
+            containter.appendChild(cell).className = 'gridItem';
+        }
     }
 
 }
