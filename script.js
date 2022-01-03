@@ -1,16 +1,19 @@
-function makeGrid(row, column){
-    const containter = document.querySelector('#container');
-
-    let i = 0;
-    for(i = 0; i<=row; i++){
-        let divRow=document.createElement('div')
-        divRow.className='row';
-        for(let i = 0; i<column; i++){
-            let cell = document.createElement('div');
-            containter.appendChild(cell).className = 'gridItem';
-        }
+function makeGrid(row=16, column=16){
+    const container = document.querySelector('#container');
+    container.style.setProperty('--grid-row', row);
+    container.style.setProperty('--grid-col', column);
+    
+    for(let i = 0; i<row*column; i++){
+        let gridItem = document.createElement('div')
+        container.appendChild(gridItem).className='gridItem';
     }
-
 }
 
-makeGrid(16,16);
+function draw(e){
+    e.target.style.backgroundColor = 'purple';
+}
+
+makeGrid();
+
+const gridItemList = document.querySelectorAll('.gridItem')
+gridItemList.forEach(item=>item.addEventListener('mouseover', draw));
