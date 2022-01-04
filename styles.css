@@ -1,21 +1,21 @@
-:root{
-    --grid-row:var(--grid-row);
-    --grid-col:var(--grid-col);
-}
-
-body{
-    display: flex;
-    justify-content: center;
-}
-
 #container{
     display: grid;
-    grid-template-rows: repeat(var(--grid-row), 1fr);
-    grid-template-columns: repeat(var(--grid-col), 1fr);
-    max-width: fit-content;
+    background-color: gray;
+    margin: 0 auto;
+    width: 580px;
+    height: 580px;
+}
+
+.row{
+    display: flex;
+    align-content: flex-end;
 }
 
 .gridItem{
-    padding: 1em;
-    border: 1px solid #ddd;
+    flex: 1;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.gridItem:hover{
+    background-color: rgba(0, 0, 255, 0.315);
 }
