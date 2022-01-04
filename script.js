@@ -35,9 +35,18 @@ function clearGrid(){
     document.querySelectorAll('.gridItem').forEach(item=>item.style.backgroundColor='');
     document.querySelectorAll('.gridItem').forEach(item=>item.parentNode.removeChild(item));
     document.querySelectorAll('.row').forEach(item=>item.parentNode.removeChild(item));
-
-    row = window.prompt('Enter number of rows up to 100.');
-    column =  window.prompt('Enter number of columns up to 100.');
+    
+    let i=0;
+    do{
+        if(i>0){
+            alert('ERROR! Enter values within 2-100');
+        }
+        row = window.prompt('Enter number of rows up to 100.');
+        column =  window.prompt('Enter number of columns up to 100.');
+        i++;
+    }
+    while(!(row>1 && column>1 && row<=100 && column<=100));
+    
     makeGrid(row, column);
 }
 
