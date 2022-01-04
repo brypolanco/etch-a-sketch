@@ -14,6 +14,9 @@ function makeGrid(row=16, column=16){
     }
     document.querySelectorAll('.gridItem').forEach(item=>item.addEventListener('mousedown', setDraw));
     document.querySelectorAll('.gridItem').forEach(item=>item.addEventListener('mouseover', draw));
+
+    document.querySelectorAll('.gridItem').forEach(item=>item.addEventListener('touchstart', setDraw));
+    document.querySelectorAll('.gridItem').forEach(item=>item.addEventListener('touchmove', draw));
 }
 
 makeGrid();
